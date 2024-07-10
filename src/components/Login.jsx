@@ -1,21 +1,16 @@
 import React, { useState } from 'react';
-import '../CSS/Login.css';
-import logo from '../assets/icici_logo.svg';
+import '../css/Login.css';
+import logo from '../images/Logo.svg';
 import { logindata } from '../services/LoginService';
 
 function Login() {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
-    loginType: "superuser" // default value can be set here
+    loginType: "opuser" // default value can be set here
   });
 
-  const [rememberUser, setRememberUser] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-
-  const handleRememberUserChange = (event) => {
-    setRememberUser(event.target.checked);
-  };
 
   const handleShowPasswordChange = (event) => {
     setShowPassword(event.target.checked);
@@ -37,7 +32,7 @@ function Login() {
       setFormData({
         username: "",
         password: "",
-        loginType: "superuser" // reset to default value
+        loginType: "opuser" // reset to default value
       });
     } catch (error) {
       console.log(error);

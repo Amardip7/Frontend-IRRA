@@ -1,35 +1,17 @@
-
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
-import Login from './components/Login';
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from "../src/components/Login";
 
 function App() {
-  return (
-    <Router>
-      <AppContent />
-    </Router>
-  );
-}
-
-function AppContent() {
-  const location = useLocation();
 
   return (
-    <div>
-      {location.pathname !== '/login'}
+    <>
+    <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        
-        <Route path="/" element={
-          <div>
-            <h1>Home Page</h1>
-            <p>Welcome to the Home Page!</p>
-          </div>
-        } />
-        
+        <Route path="/login" element={<Login/>} />  
       </Routes>
-    </div>
+    </BrowserRouter>
+    </>
   );
 }
 
