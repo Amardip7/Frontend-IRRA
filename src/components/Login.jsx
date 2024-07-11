@@ -62,7 +62,7 @@ function Login() {
               </select>
             </div>
             <div>
-              <label htmlFor="username"  class="mt-3"><b>User ID: </b></label>
+              <label htmlFor="username"  className="mt-3"><b>User ID: </b></label>
               <input
                 type="text"
                 id="username"
