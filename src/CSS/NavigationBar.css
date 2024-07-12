@@ -1,0 +1,28 @@
+.custom-navbar {
+    background-color: #ffedd5; /* Light orange color */
+  }
+  
+  .custom-nav .nav-link {
+    color: #000; /* Text color */
+  }
+  
+  .icicilogo{
+    height: 30px; /* Adjust the height as needed */
+    /* width: auto;  */
+  }
+
+  .separator {
+    color: #000; /* Separator color */
+  }
+  
+  .orange-button {
+    color: #fff;
+    background-color: #ff5e00; /* Orange button color */
+    border-color: #FFA500;
+  }
+  
+  .orange-button:hover {
+    background-color: #FF8C00; /* Darker orange on hover */
+    border-color: #FF8C00;
+  }
+  
