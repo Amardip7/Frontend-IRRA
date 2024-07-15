@@ -10,7 +10,13 @@ function Login() {
     loginType: "opuser" // default value can be set here
   });
 
+  const [rememberUser, setRememberUser] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [errors, setErrors] = useState({});
+
+  const handleRememberUserChange = (event) => {
+    setRememberUser(event.target.checked);
+  };
 
   const handleShowPasswordChange = (event) => {
     setShowPassword(event.target.checked);
@@ -24,8 +30,30 @@ function Login() {
     }));
   };
 
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.username) {
+      newErrors.username = "Username is required !!";
+    }
+    if (!formData.password) {
+      newErrors.password = "Password is required !!";
+    } else if (formData.password.length < 8) {
+      newErrors.password = "Password must be at least 8 characters !!";
+    }
+    setErrors(newErrors);
+    if (Object.keys(newErrors).length > 0) {
+      setTimeout(() => {
+        setErrors({});
+      }, 1500); // Clear errors after 1.5 seconds
+    }
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validateForm()) {
+      return;
+    }
     try {
       const response = await logindata(formData);
       console.log(response);
@@ -41,7 +69,6 @@ function Login() {
 
   return (
     <>
-      {}
       <div>
         <div className="logo1 mt-5">
           <img src={logo} alt="QR Code" />
@@ -62,7 +89,7 @@ function Login() {
               </select>
             </div>
             <div>
-              <label htmlFor="username"  className="mt-3"><b>User ID: </b></label>
+              <label htmlFor="username" className="mt-3"><b>User ID: </b></label>
               <input
                 type="text"
                 id="username"
@@ -70,6 +97,7 @@ function Login() {
                 value={formData.username}
                 onChange={handleChange}
               />
+              {errors.username && <span className="error">{errors.username}</span>}
             </div>
             <div>
               <label htmlFor="password"><b>Password / PIN: </b></label>
@@ -80,6 +108,9 @@ function Login() {
                 value={formData.password}
                 onChange={handleChange}
               />
+              {errors.password && <span className="error">{errors.password}</span>}
+            </div>
+            <div className="show-password-container">
               <input
                 type="checkbox"
                 id="show-password"
@@ -88,9 +119,22 @@ function Login() {
               />
               <label htmlFor="show-password">Show password</label>
             </div>
+            {/* <div>
+              <input
+                type="checkbox"
+                id="rememberUser"
+                checked={rememberUser}
+                onChange={handleRememberUserChange}
+              />
+              <label htmlFor="rememberUser">Remember User ID</label>
+            </div> */}
             <button type="submit"><b>Login</b></button>
           </form>
         </div>
+        {/* <div className="footer">
+          <p>Trouble Logging-in?</p>
+          <p>Don't have an Account? Sign up</p>
+        </div> */}
       </div>
     </>
   );

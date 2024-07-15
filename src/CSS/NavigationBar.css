@@ -1,28 +1,32 @@
 .custom-navbar {
-    background-color: #ffedd5; /* Light orange color */
-  }
-  
-  .custom-nav .nav-link {
-    color: #000; /* Text color */
-  }
-  
-  .icicilogo{
-    height: 30px; /* Adjust the height as needed */
-    /* width: auto;  */
+  background-color: #f8f9fa; /* Example background color */
+}
+
+.icicilogo {
+  max-width: 100%;
+  height: auto;
+}
+
+.custom-nav .separator {
+  color: #000; /* Example color */
+}
+
+.orange-button {
+  color: #fff;
+  background-color: #ff5e00; /* Orange button color */
+  border-color: #FFA500;
+}
+
+@media (max-width: 992px) {
+  .custom-nav {
+    text-align: center;
   }
 
   .separator {
-    color: #000; /* Separator color */
+    display: none;
   }
-  
+
   .orange-button {
-    color: #fff;
-    background-color: #ff5e00; /* Orange button color */
-    border-color: #FFA500;
+    margin-top: 10px;
   }
-  
-  .orange-button:hover {
-    background-color: #FF8C00; /* Darker orange on hover */
-    border-color: #FF8C00;
-  }
-  
+}

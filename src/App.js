@@ -9,6 +9,8 @@ import Equity from './components/Equity';
 import OpDashboard from './components/OpDashboard';
 import SuperDashboard from './components/SuperDashboard';
 import Orders from './components/Orders';
+import SquareOff from './components/SquareOff.jsx';
+import OrderVerification from './components/OrderVerification.jsx';
 
 function App() {
   return (
@@ -55,13 +57,9 @@ function AppContent() {
         <Route path="/orders" element={<Orders />} />
         <Route path="/opdashboard" element={<OpDashboard />} />
         <Route path="/superdashboard" element={<SuperDashboard />} />
-        <Route path="/" element={
-          <div>
-            <h1>Home Page</h1>
-            <p>Welcome to the Home Page!</p>
-          </div>
-        } />
         <Route path="/dashboard" element={user.role === 'superuser' ? <SuperDashboard /> : <OpDashboard />} />
+        <Route path="/squareoff" element={<SquareOff />} />
+        <Route path="/orderverification" element={<OrderVerification />} />
 
       </Routes>
     </div>

@@ -1,0 +1,14 @@
+.order-verification {
+    margin: 20px;
+  }
+  
+  .order-verification h1 {
+    margin-bottom: 20px;
+  }
+  
+  .order-verification .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  

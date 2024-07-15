@@ -14,7 +14,7 @@ app.get("/api/stock-prices", async (req, res) => {
     params: { Indices: "NIFTY 50" },
     headers: {
       "x-rapidapi-host": "latest-stock-price.p.rapidapi.com",
-      "x-rapidapi-key": "b31621aa19msh63a7363af979a51p1274c4jsn9f1faeefc433" // Replace with your actual API key
+      "x-rapidapi-key": "7289c9d769mshbb25829ecf700f4p125f47jsn1dc97e85a3d2" // Replace with your actual API key
     }
   };
 
